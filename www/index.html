@@ -69,7 +69,11 @@
         // 各データを収めた表の列を生成
         msg += "<tr>";
         msg += "<td>" + results[i].name + "</td>";
-        msg += "<td class='num'>" + results[i].tire + "</td>";
+        if(results[i].tire >= 0){
+            msg += "<td class='num'>" + results[i].tire + "</td>";
+        }else{
+            msg += "<td class='num'>" + "EX" + "</td>";
+        }
         msg += "<td class='num'>" + results[i].size + "</td>";
         msg += "</tr>";
       }
