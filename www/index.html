@@ -38,26 +38,26 @@
             showResults(results);
         })
     }
-    function searchLevel(){
-        let level = parseInt($("#level").val());
+    function searchSize(){
+        let size = parseInt($("#size").val());
         let TestDataClass = ncmb.DataStore(db);
-        TestDataClass.equalTo("level",level).fetchAll()
+        TestDataClass.equalTo("size",size).fetchAll()
         .then(function(results){
             showResults(results);
         })
     }
-    function searchLevelLT(){
-        let level = parseInt($("#level").val());
+    function searchSizeLT(){
+        let size = parseInt($("#size").val());
         let TestDataClass = ncmb.DataStore(db);
-        TestDataClass.greaterThan("level",level).fetchAll()
+        TestDataClass.greaterThan("size",size).fetchAll()
         .then(function(results){
             showResults(results);
         })
     }
-    function searchLevelGT(){
-        let level = parseInt($("#level").val());
+    function searchSizeGT(){
+        let size = parseInt($("#size").val());
         let TestDataClass = ncmb.DataStore(db);
-        TestDataClass.lessThan("level",level).fetchAll()
+        TestDataClass.lessThan("size",size).fetchAll()
         .then(function(results){
             showResults(results);
         })
@@ -99,9 +99,9 @@
     <button class="btn" onclick="searchTire()">Tire</button>
     <button class="btn" onclick="searchName()">Name</button>
     <br>
-    <button class="btn" onclick="searchLevelLT()">Size &lt;</button>
-    <button class="btn" onclick="searchLevel()">Size</button>
-    <button class="btn" onclick="searchLevelGT()">Size &gt;</button>
+    <button class="btn" onclick="searchSizeLT()">Size &lt;</button>
+    <button class="btn" onclick="searchSize()">Size</button>
+    <button class="btn" onclick="searchSizeGT()">Size &gt;</button>
   </div>
   <div id="message">message area</div>
 </body>
