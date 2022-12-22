@@ -4,6 +4,10 @@ body {
 }
 h1 {
   background-color: yellow;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20pt;
+  height: 4ex;
 }
 
 label {

@@ -30,6 +30,14 @@
             showResults(results);
         })
     }
+     function searchTire(){
+        let name = $("#name").val();
+        let TestDataClass = ncmb.DataStore(db);
+        TestDataClass.equalTo("name",name).fetchAll()
+        .then(function(results){
+            showResults(results);
+        })
+    }
     function searchLevel(){
         let level = parseInt($("#level").val());
         let TestDataClass = ncmb.DataStore(db);
@@ -74,17 +82,21 @@
 </head>
 
 <body>
-  <h1>mBaaS search</h1>
+  <h1>Azurlane Not Public Tire</h1>
   <div>
     <label for="name">name:</label>
-    <input id="name" type="text" placeholder="monster name">
+    <input id="name" type="text" placeholder="ship's name">
   </div>
   <div>
-    <label for="level">level:</label>
-    <input id="level" type="number" placeholder="monster level">
+    <label for="level">Tire:</label>
+    <input id="level" type="number" placeholder="ship's tire">
+  </div>
+   <div>
+    <label for="size">Size:</label>
+    <input id="size" type="number" placeholder="ship's size">
   </div>
   <div id="button">
-    <button class="btn" onclick="fetchAll()">Fetch All</button>
+    <button class="btn" onclick="fetchAll()">Tire</button>
     <button class="btn" onclick="searchName()">Name</button>
     <br>
     <button class="btn" onclick="searchLevelLT()">Level &lt;</button>
