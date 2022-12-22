@@ -31,9 +31,9 @@
         })
     }
      function searchTire(){
-        let name = $("#name").val();
+        let tire = parseInt($("#tire").val());
         let TestDataClass = ncmb.DataStore(db);
-        TestDataClass.equalTo("name",name).fetchAll()
+        TestDataClass.equalTo("tire",tire).fetchAll()
         .then(function(results){
             showResults(results);
         })
@@ -87,8 +87,8 @@
     <input id="name" type="text" placeholder="ship's name">
   </div>
   <div>
-    <label for="level">Tire:</label>
-    <input id="level" type="number" placeholder="ship's tire">
+    <label for="tire">Tire:</label>
+    <input id="tire" type="number" placeholder="ship's tire">
   </div>
   <div>
     <label for="size">Size:</label>
@@ -96,7 +96,7 @@
   </div>
   <h2>This size is not public.</h2>
   <div id="button">
-    <button class="btn" onclick="fetchAll()">Tire</button>
+    <button class="btn" onclick="searchTire()">Tire</button>
     <button class="btn" onclick="searchName()">Name</button>
     <br>
     <button class="btn" onclick="searchLevelLT()">Size &lt;</button>
