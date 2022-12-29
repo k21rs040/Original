@@ -28,6 +28,7 @@
         TestDataClass.equalTo("name",name).fetchAll()
         .then(function(results){
             showResults(results);
+            showComent(results);
         })
     }
      function searchTire(){
@@ -81,6 +82,18 @@
       msg += "</table>";
       $("#message").html(msg);
     }
+
+    function showComent(results){
+        let com = "<table>";
+        for(let i=0; i<results.length; i++){
+            if(results[i].name == "アンカレッジ"){
+                com += "さわさわ" + "<br>" + "ぷにぷに" + "<br>" + "EXボイスと着せ替えはよ";
+            }
+        }
+        com += "</table>";
+        $("#coment").html(com);
+    }
+
   </script>
 </head>
 
@@ -108,6 +121,7 @@
     <button class="btn" onclick="searchSizeGT()">Size &gt;</button>
   </div>
   <div id="message">message area</div>
+  <div id="coment">coment</div>
 </body>
 
 </html>
