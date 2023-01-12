@@ -37,6 +37,7 @@
         TestDataClass.equalTo("tire",tire).fetchAll()
         .then(function(results){
             showResults(results);
+            showComent(results);
         })
     }
     function searchSize(){
@@ -45,6 +46,7 @@
         TestDataClass.equalTo("size",size).fetchAll()
         .then(function(results){
             showResults(results);
+            showComent(results);
         })
     }
     function searchSizeLT(){
@@ -53,6 +55,7 @@
         TestDataClass.greaterThan("size",size).fetchAll()
         .then(function(results){
             showResults(results);
+            showComent(results);
         })
     }
     function searchSizeGT(){
@@ -61,6 +64,7 @@
         TestDataClass.lessThan("size",size).fetchAll()
         .then(function(results){
             showResults(results);
+            showComent(results);
         })
     }
     function showResults(results) {
