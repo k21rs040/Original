@@ -74,10 +74,12 @@
         // 各データを収めた表の列を生成
         msg += "<tr>";
         msg += "<td>" + results[i].name + "</td>";
-        if(results[i].tire >= 0){
+        if(results[i].tire >= 0 && results[i].tire <= 99){
             msg += "<td class='num'>" + results[i].tire + "</td>";
-        }else{
+        }else if(results[i].tire <= -1){
             msg += "<td class='num'>" + "EX" + "</td>";
+        }else{
+            msg += "<td class='num'>" + "無" + "</td>";
         }
         msg += "<td class='num'>" + results[i].size + "</td>";
         msg += "</tr>";
@@ -91,7 +93,32 @@
         let com = "<table>";
         for(let i=0; i<results.length; i++){
             if(results[i].name == "アンカレッジ"){
-                com += "さわさわ" + "<br>" + "ぷにぷに" + "<br>" + "EXボイスと着せ替えはよ";
+                com += "さわさわ" + "<br>" + "ぷにぷに" + "<br>" + "EXボイスと着せ替えはよ" + "<br>";
+            }else if(results[i].name == "ラ・ガリソニエール"){
+                com += "っ.....。" + "<br>";
+            }else if(results[i].name == "信濃"){
+                com += "寝させてほしいで申す...。" + "<br>";
+            }else if(results[i].name == "エルビング"){
+                com += "寝間着最高でございます。" + "<br>";
+            }else if(results[i].name == "イラストリアス"){
+                com += "お義姉様....!!" +"<br>";
+            }else if(results[i].name == "アルビオン"){
+                com += "シナプス艦長は乗ってません。" + "<br>";
+            }else if(results[i].name == "ブレスト"){
+                com += "ブレストファイアー！！（物理）" + "<br>";
+            }
+            if(results[i].size <= 80){
+                com += "まな板好きなんですよ" + "<br>";
+            }
+            if(results[i].size == 75){
+                com += "「まな板じゃないっての！！」って聞こえます" + "<br>";
+            }
+            if(results[i].tire == 1){
+                com += "でっっっっ！！！！！" + "<br>";
+            }else if(results[i].tire == 0){
+                com += "天元突破" + "<br>";
+            }else if(results[i].tire == -1){
+                com += "3981...これ以上言うまい..." + "<br>";
             }
         }
         com += "</table>";
